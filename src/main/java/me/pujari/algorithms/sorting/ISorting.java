@@ -1,5 +1,9 @@
 package me.pujari.algorithms.sorting;
 
+import javax.naming.OperationNotSupportedException;
+
 public interface ISorting {
-	public Integer[] sort(Integer[] intArray);
+	public default Integer[] sort(Integer[] intArray) throws OperationNotSupportedException {
+		throw new OperationNotSupportedException();
+	}
 }
