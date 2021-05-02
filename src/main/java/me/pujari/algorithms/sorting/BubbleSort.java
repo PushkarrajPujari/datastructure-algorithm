@@ -8,13 +8,13 @@ public class BubbleSort implements ISorting {
 			for (int currentElementIndex = 0; currentElementIndex < lastElementIndex; currentElementIndex++) {
 				int nextElementIndex = currentElementIndex + 1;
 				if (intArray[currentElementIndex] > intArray[nextElementIndex]) {
-					int temp = intArray[currentElementIndex];
-					intArray[currentElementIndex] = intArray[nextElementIndex];
-					intArray[nextElementIndex] = temp;
+					swap(intArray, currentElementIndex, nextElementIndex);
 				}
 			}
 		}
 		return intArray;
 	}
+
+	
 
 }
