@@ -7,6 +7,10 @@ public interface ISorting {
 		throw new OperationNotSupportedException();
 	}
 
+	public default Integer[] sortAlternative(Integer[] intArray) throws OperationNotSupportedException {
+		throw new OperationNotSupportedException();
+	}
+
 	public default void swap(Integer[] intArray, int currentElementIndex, int nextElementIndex) {
 		int temp = intArray[currentElementIndex];
 		intArray[currentElementIndex] = intArray[nextElementIndex];
