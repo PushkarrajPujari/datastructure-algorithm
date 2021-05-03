@@ -1,7 +1,8 @@
 package me.pujari.algorithms.sorting;
 
-public class SelectionSort implements ISorting {
+public class SelectionSort implements ISorting<Integer> {
 
+	@Override
 	public Integer[] sort(Integer[] intArray) {
 		for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
 			int largestIntIndex = 0;

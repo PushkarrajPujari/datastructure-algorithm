@@ -2,7 +2,9 @@ package me.pujari.algorithms.sorting;
 
 import java.util.Arrays;
 
-public class InsertionSort implements ISorting {
+public class InsertionSort implements ISorting<Integer> {
+	
+	@Override
 	public Integer[] sort(Integer[] intArray) {
 		for (int sortedIndex = 0; sortedIndex < intArray.length - 1; sortedIndex++) {
 			if (intArray[sortedIndex] > intArray[sortedIndex + 1]) {
@@ -23,16 +25,15 @@ public class InsertionSort implements ISorting {
 		return intArray;
 	}
 
+	@Override
 	public Integer[] sortAlternative(Integer[] intArray) {
 		for (int firstUnsortedPartision = 1; firstUnsortedPartision < intArray.length; firstUnsortedPartision++) {
 			int temp = intArray[firstUnsortedPartision];
-			int i ;
+			int i;
 			for (i = firstUnsortedPartision; i > 0 && intArray[i - 1] > temp; i--) {
-			 
 				intArray[i] = intArray[i - 1];
-				
 			}
-			intArray[i]=temp;
+			intArray[i] = temp;
 		}
 		return intArray;
 	}

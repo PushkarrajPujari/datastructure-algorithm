@@ -1,6 +1,6 @@
 package me.pujari.algorithms.sorting;
 
-public class BubbleSort implements ISorting {
+public class BubbleSort implements ISorting<Integer> {
 
 	@Override
 	public Integer[] sort(Integer[] intArray) {
