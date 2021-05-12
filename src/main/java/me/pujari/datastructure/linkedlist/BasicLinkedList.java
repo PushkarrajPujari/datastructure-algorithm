@@ -1,7 +1,5 @@
 package me.pujari.datastructure.linkedlist;
 
-import java.util.List;
-
 public class BasicLinkedList<E> implements ILinkedList<E> {
 
 	private INode<E> headNode;
