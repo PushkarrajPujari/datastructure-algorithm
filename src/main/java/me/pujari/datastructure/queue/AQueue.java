@@ -14,7 +14,7 @@ public class AQueue implements IQueue<Integer> {
 
 	@Override
 	public IQueue<Integer> enqueue(Integer e) {
-		if (tailPointer < intArray.length - 1) {
+		if (tailPointer < intArray.length) {
 			intArray[tailPointer++] = e;
 		} else {
 			System.out.println("Queue is full");
@@ -26,11 +26,11 @@ public class AQueue implements IQueue<Integer> {
 	public Integer dequeue() {
 		Integer value = null;
 		if (headPointer < tailPointer) {
-			value = intArray[headPointer++];
-			if (headPointer >= tailPointer) {
-				headPointer = 0;
-				tailPointer = 0;
+			value = intArray[headPointer];
+			for(int i = headPointer;i<(tailPointer-1);i++) {
+				intArray[i] = intArray[i+1];
 			}
+			tailPointer--;
 		} else {
 			System.out.println("Queue is empty");
 			headPointer = 0;

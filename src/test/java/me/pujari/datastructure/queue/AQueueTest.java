@@ -19,6 +19,12 @@ public class AQueueTest {
 		assertEquals(100, queue.dequeue());
 		assertEquals(200, queue.dequeue());
 		assertEquals(300, queue.dequeue());
+		for(int i = 0;i<=15;i++) {
+			queue.enqueue(i);
+		}
+		for(int i =0 ;i<15;i++) {
+			assertEquals(i, queue.dequeue());
+		}
 
 	}
 }
