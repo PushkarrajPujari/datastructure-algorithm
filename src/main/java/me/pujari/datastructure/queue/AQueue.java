@@ -1,5 +1,7 @@
 package me.pujari.datastructure.queue;
 
+import java.util.Arrays;
+
 public class AQueue implements IQueue<Integer> {
 
 	private Integer[] intArray;
@@ -17,7 +19,12 @@ public class AQueue implements IQueue<Integer> {
 		if (tailPointer < intArray.length) {
 			intArray[tailPointer++] = e;
 		} else {
-			System.out.println("Queue is full");
+			System.out.println("Queue is full, Resizing queue");
+			Integer[] newArray = new Integer[intArray.length + (intArray.length/2)];
+			
+			System.arraycopy(intArray, 0, newArray, 0, intArray.length );
+			intArray = newArray;
+			enqueue(e);
 		}
 		return this;
 	}
